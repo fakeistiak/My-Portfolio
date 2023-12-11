@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaFacebook, FaGithub, FaInstagram } from "react-icons/fa";
 import { TypeAnimation } from "react-type-animation";
+import { MdDownload } from "react-icons/md";
 
 const Banner = () => {
   useEffect(() => {
@@ -16,11 +17,8 @@ const Banner = () => {
     <div className="container px-6 py-16 mx-auto bg-black text-white">
       <div className="flex flex-col-reverse lg:flex-row items-center">
         <div className="lg:w-1/2 lg:pr-8">
-          <div className="lg:max-w-lg">
-            <h1
-              className="text-3xl lg:text-5xl font-bold k"
-              data-aos="fade-up"
-            >
+          <div className="lg:max-w-lg pl-8">
+            <h1 className="text-3xl lg:text-5xl font-bold k" data-aos="fade-up">
               Istiuqe Ahmed
             </h1>
             <h1
@@ -48,29 +46,34 @@ const Banner = () => {
               succeed
             </p>
 
-            <button
-              className="h-12 mt-4 w-full lg:w-auto p-3 bg-white font-bold text-black rounded-2xl hover:bg-gray-200"
-              data-aos="fade-up"
-              data-aos-delay="600"
-            >
-              Download Resume
-            </button>
-
             <div
-              className="text-3xl gap-4 flex mt-4"
+              className="text-3xl gap-4 flex mt-4 lg:pl-4 pl-12 py-4"
               data-aos="fade-up"
               data-aos-delay="800"
             >
-              <a href="#" className="k">
+              <a
+                href="https://www.facebook.com/profile.php?id=100075844680557&mibextid=ZbWKwL"
+                className="k"
+              >
                 <FaFacebook />
               </a>
-              <a href="#" className="k">
+              <a
+                href="https://www.instagram.com/istiak_ahmed_14_/?igshid=YzAwZjE1ZTI0Zg%3D%3D"
+                className="k"
+              >
                 <FaInstagram />
               </a>
-              <a href="#" className="k">
+              <a href="https://github.com/fakeistiak" className="k">
                 <FaGithub />
               </a>
             </div>
+            <button
+              className="h-12 mt-4 w-full lg:w-auto p-3 bg-sky-400 font-bold text-black rounded-2xl flex items-center hover:bg-sky-600"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              Download Resume<MdDownload className="text-xl"></MdDownload>
+            </button>
           </div>
         </div>
 

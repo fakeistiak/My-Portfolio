@@ -11,7 +11,6 @@ const Home = () => {
       <AboutMe></AboutMe>
       <Skills></Skills>
       <MyProjects></MyProjects>
-      <Contact></Contact>
     </div>
   );
 };

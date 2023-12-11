@@ -3,6 +3,7 @@ import CountUp from "react-countup";
 import ScrollTrigger from "react-scroll-trigger";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 const AboutMe = () => {
   const [counterStart, setCounterStart] = useState(false);
   useEffect(() => {
@@ -36,13 +37,17 @@ const AboutMe = () => {
               <h1 className="text-4xl lg:text-7xl font-bold  font-serif">
                 About Me
               </h1>
-              <h1 className="lg:text-4xl text-3xl font-bold font-serif  pt-4"> I'm a </h1>
-              <p className=" w-1/2 p-2 font-serif">
+              <h1 className="lg:text-4xl text-3xl font-bold font-serif  pt-4">
+                {" "}
+                I'm a{" "}
+              </h1>
+              <p className="lg:w-1/2 p-2 font-serif pb-8">
                 science background student finished my SSC from Shaheen Academy
                 Feni and Hsc from Feni Govt College .Currently I'm in first year
                 of my university at Computer Science and Engineering in Northern
                 University Bangladesh
               </p>
+              <Link to="contact" className="h-12 mt-4 w-full lg:w-auto p-3 bg-sky-400 font-semibold text-black rounded-xl hover:bg-sky-600">Hire Me</Link>
             </div>
           </div>
         </div>
