@@ -18,11 +18,11 @@ const Navbar = () => {
   );
   return (
     <>
-      <div className="navbar text-black max-w-screen ">
+      <div className="navbar  text-white bg-black max-w-screen ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <CiMenuBurger className="text-xl text-black" />
+              <CiMenuBurger className="text-xl " />
             </label>
             <ul
               tabIndex={0}

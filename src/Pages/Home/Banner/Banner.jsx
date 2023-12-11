@@ -13,22 +13,22 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="container px-6 py-16 mx-auto">
+    <div className="container px-6 py-16 mx-auto bg-black text-white">
       <div className="flex flex-col-reverse lg:flex-row items-center">
         <div className="lg:w-1/2 lg:pr-8">
           <div className="lg:max-w-lg">
             <h1
-              className="text-3xl lg:text-5xl font-bold text-black"
+              className="text-3xl lg:text-5xl font-bold k"
               data-aos="fade-up"
             >
               Istiuqe Ahmed
             </h1>
             <h1
-              className="text-3xl lg:text-5xl font-bold text-black"
+              className="text-3xl lg:text-5xl font-bold k"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <span className="text-black">I'm a </span>
+              <span className="k">I'm a </span>
               <TypeAnimation
                 className="lg:text-5xl text-3xl "
                 sequence={["MERN Stack Developer", 2500]}
@@ -38,7 +38,7 @@ const Banner = () => {
             </h1>
 
             <p
-              className="mt-3 text-black font-extralight"
+              className="mt-3 k font-extralight"
               data-aos="fade-up"
               data-aos-delay="400"
             >
@@ -49,11 +49,11 @@ const Banner = () => {
             </p>
 
             <button
-              className="h-12 mt-4 w-full lg:w-28 bg-black text-white rounded-2xl hover:bg-gray-800"
+              className="h-12 mt-4 w-full lg:w-auto p-3 bg-white font-bold text-black rounded-2xl hover:bg-gray-200"
               data-aos="fade-up"
               data-aos-delay="600"
             >
-              Contact Me
+              Download Resume
             </button>
 
             <div
@@ -61,13 +61,13 @@ const Banner = () => {
               data-aos="fade-up"
               data-aos-delay="800"
             >
-              <a href="#" className="text-black">
+              <a href="#" className="k">
                 <FaFacebook />
               </a>
-              <a href="#" className="text-black">
+              <a href="#" className="k">
                 <FaInstagram />
               </a>
-              <a href="#" className="text-black">
+              <a href="#" className="k">
                 <FaGithub />
               </a>
             </div>
