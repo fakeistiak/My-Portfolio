@@ -56,7 +56,7 @@ const Contact = () => {
         Contact Me
       </h1>
       <div className="container px-6 py-10 mx-auto">
-        <div className="lg:flex lg:items-center lg:-mx-10">
+        <div className="lg:flex lg:items-center lg:-mx-6">
           <div className="lg:w-1/2 lg:mx-10">
             <h1 className="text-2xl font-semibold  capitalize dark:text-white lg:text-3xl">
               Let’s talk
