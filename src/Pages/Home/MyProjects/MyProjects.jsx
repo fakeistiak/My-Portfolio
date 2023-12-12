@@ -47,7 +47,7 @@ const MyProjects = () => {
               Our hotel room booking service ensures exclusive room
               reservations, preventing simultaneous bookings for the same room.
               Enjoy a seamless experience, guaranteeing privacy and comfort for
-              each guest.
+              each guests.
             </p>
             <div className="text-3xl gap-4 flex justify-center text-center py-2 text-white font-bold animate__animated animate__fadeIn">
               <a
