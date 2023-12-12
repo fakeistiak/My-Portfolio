@@ -8,10 +8,28 @@ import { MdDownload } from "react-icons/md";
 const Banner = () => {
   useEffect(() => {
     AOS.init({
-      duration: 2000, // Animation duration in milliseconds
-      offset: 200, // Offset (in pixels) from the top of the page to start the animation
+      duration: 2000,
+      offset: 200,
     });
   }, []);
+  const handleDownloadResume = async () => {
+    const googleDocsLink =
+      "https://docs.google.com/document/d/1TEnOcKfEiOs42Wpwnbu6GwZOTwMtTPlbP0bgHrOEb1o/export?format=pdf";
+
+    try {
+      const response = await fetch(googleDocsLink);
+      const blob = await response.blob();
+      const link = document.createElement("a");
+      link.href = window.URL.createObjectURL(blob);
+      link.target = "_blank";
+      link.download = "Istiuqe_Ahmed_Resume.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error("Error downloading the file:", error);
+    }
+  };
 
   return (
     <div className="container px-6 py-16 mx-auto bg-black text-white">
@@ -71,6 +89,7 @@ const Banner = () => {
               className="h-12 mt-4 w-full lg:w-auto p-3 bg-sky-400 font-bold text-black rounded-2xl flex items-center hover:bg-sky-600"
               data-aos="fade-up"
               data-aos-delay="600"
+              onClick={handleDownloadResume}
             >
               Download Resume<MdDownload className="text-xl"></MdDownload>
             </button>

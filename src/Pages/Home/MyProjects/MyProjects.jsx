@@ -59,7 +59,7 @@ const MyProjects = () => {
               ullam saepe. Praesentium.
             </p>
             <div className="text-3xl gap-4 flex justify-center py-2 pb-4 text-white font-bold">
-              <a href="https://assignment-12-90674.web.app/">
+              <a href="https://assignment-10-90674.web.app/">
                 <CiLink />
               </a>
               <a href="https://github.com/fakeistiak/CarHub-Client">
@@ -97,7 +97,7 @@ const MyProjects = () => {
             </div>
             <div className="flex gap-6 text-green-400 justify-center">
               <SiHtml5 className="text-3xl"></SiHtml5>
-              <SiTailwindcss  className="text-3xl text-black"></SiTailwindcss>
+              <SiTailwindcss className="text-3xl text-black"></SiTailwindcss>
               <SiReact className="text-3xl text-sky-400"></SiReact>
               <SiJavascript className="text-3xl text-yellow-400"></SiJavascript>
             </div>
