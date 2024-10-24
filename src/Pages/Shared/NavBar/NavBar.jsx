@@ -1,44 +1,60 @@
-import {  NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
+import { useState } from "react";
 
 const Navbar = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   const navLinks = (
     <>
-      <li className="font-bold">
-        <NavLink to="/">Home</NavLink>
+      <li className="font-semibold px-2 py-1 hover:text-cyan-500">
+        <NavLink to="/" onClick={() => setIsDropdownOpen(false)}>
+          Home
+        </NavLink>
       </li>
-      <li className="font-bold">
-        <NavLink to="/contact">Contact Me</NavLink>
+      <li className="font-semibold px-2 py-1 hover:text-cyan-500">
+        <NavLink to="/contact" onClick={() => setIsDropdownOpen(false)}>
+          Contact Me
+        </NavLink>
       </li>
     </>
   );
+
   return (
-    <>
-      <div className="navbar  text-white bg-black max-w-screen ">
-        <div className="navbar-start">
-          <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost lg:hidden">
-              <CiMenuBurger className="text-xl " />
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-black rounded-box w-52"
-            >
-              {navLinks}
-            </ul>
-          </div>
-          <div className="normal-case font-bold text-center">
-            <h1 className="lg:text-3xl text-xl pl-4 sm:text-sm font-extrabold">
-              Portfolio
-            </h1>
-          </div>
+    <div className="text-white bg-transparent fixed top-0 left-0 right-0 z-10 mx-auto max-w-7xl px-4 lg:px-8">
+      <div className="flex justify-between items-center py-4">
+        {/* Logo Section */}
+        <div className="flex items-center">
+          <h1 className="lg:text-3xl text-xl font-extrabold">Portfolio</h1>
         </div>
-        <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navLinks}</ul>
+
+        {/* Hamburger Menu for Small Screens */}
+        <div className="lg:hidden">
+          <button
+            onClick={handleDropdownToggle}
+            className="text-xl focus:outline-none"
+          >
+            <CiMenuBurger />
+          </button>
+        </div>
+
+        {/* Dropdown Menu */}
+        {isDropdownOpen && (
+          <ul className="absolute top-16 left-4 right-4 bg-black rounded-md shadow-lg p-4 lg:hidden">
+            {navLinks}
+          </ul>
+        )}
+
+        {/* Navigation Links for Large Screens */}
+        <div className="hidden lg:flex">
+          <ul className="flex space-x-4">{navLinks}</ul>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

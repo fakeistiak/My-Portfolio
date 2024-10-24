@@ -1,164 +1,131 @@
+import { useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { CiLink } from "react-icons/ci";
-import {
-  SiExpress,
-  SiNextdotjs,
-  SiJavascript,
-  SiHtml5,
-  SiReact,
-  SiTailwindcss,
-} from "react-icons/si";
-import { DiMongodb } from "react-icons/di";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import projects from "../../../components/projects.js";
 
 const MyProjects = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
+
   useEffect(() => {
     AOS.init({
-      duration: 2500,
+      duration: 200,
       easing: "ease-in-out",
       once: true,
     });
   }, []);
+
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
+
   return (
-    <div className="text-white bg-black lg:py-212">
-      <h1 className="lg:text-4xl text-2xl font-bold font-serif lg:text-center py-6 lg:py-12">
-        My Latest Projects
+    <div className="text-white mx-auto max-w-7xl">
+      <h1 className="lg:text-4xl text-2xl font-bold font-serif text-center pt-6 lg:pb-4 pb-2">
+        Projects
       </h1>
-      <div className="grid lg:grid-cols-3 grid-cols-1 justify-center lg:px-1 px-4 lg:pl-8">
-        <div
-          className="w-full max-w-md overflow-hidden rounded-lg shadow-lg bg-gradient-to-r from-sky-500 to-teal-500 mb-12 transform hover:scale-105 transition-transform duration-300"
-          data-aos="fade-up"
-          data-aos-anchor="body"
-        >
-          <div className="relative overflow-hidden">
-            <img
-              className="object-cover w-full lg:h-56 h-40 rounded-t-lg"
-              src="https://i.ibb.co/gwCJr1G/11.png"
-              alt="LuxoStay Preview"
-            />
-          </div>
-          <div className="py-5 text-center text-white">
-            <h1 className="block lg:lg:text-3xl text-xl text-xl font-bold mb-2 animate__animated animate__fadeInDown">
-              LuxoStay
-            </h1>
-            <p className="text-sm animate__animated animate__fadeIn lg:px-4">
-              Our hotel room booking service ensures exclusive room
-              reservations, preventing simultaneous bookings for the same room.
-              Enjoy a seamless experience, guaranteeing privacy and comfort for
-              each guests.
-            </p>
-            <div className="lg:lg:text-3xl text-xl text-xl gap-4 flex justify-center text-center py-2 text-white font-bold animate__animated animate__fadeIn">
-              <a
-                href="https://godly-queen.surge.sh/"
-                className="hover:text-blue-300"
-              >
-                <CiLink />
-              </a>
-              <a
-                href="https://github.com/fakeistiak/LuxoStay-Client"
-                className="hover:text-gray-300"
-              >
-                <FaGithub />
-              </a>
-            </div>
-            <div className="flex gap-6 text-green-400 justify-center animate__animated animate__fadeIn">
-              <SiReact className="lg:lg:text-3xl text-xl  text-sky-400"></SiReact>
-              <DiMongodb className="lg:lg:text-3xl text-xl "></DiMongodb>
-              <SiNextdotjs className="lg:lg:text-3xl text-xl text-white"></SiNextdotjs>
-              <SiExpress className="lg:text-3xl text-xl text-green-400"></SiExpress>
-              <SiJavascript className="lg:lg:text-3xl text-xl  text-yellow-400"></SiJavascript>
-            </div>
-          </div>
-        </div>
+      <div className="mx-auto lg:w-20 w-12 h-1 bg-cyan-500 mb-12"></div>
 
-        <div
-          className="w-full max-w-md overflow-hidden rounded-lg shadow-lg bg-gradient-to-r from-sky-500 to-teal-500 mb-12 transform hover:scale-105 transition-transform duration-300"
-          data-aos="fade-up"
-          data-aos-anchor="body"
-        >
-          <img
-            className="object-cover w-full h-56 rounded-t-lg"
-            src="https://i.ibb.co/SQqBcT7/10.png"
-            alt="CarHub Preview"
-          />
-          <div className="py-5 text-center text-white">
-            <h1 className="block lg:lg:text-3xl text-xl font-bold mb-2 animate__animated animate__fadeInDown">
-              CarHub
-            </h1>
-            <p className="text-sm animate__animated animate__fadeIn px-4">
-              Welcome to our car fair! Find your dream car or customize your
-              request, and we'll bring it to you. Explore a wide range of
-              options for a personalized and convenient car-buying experience.bring it on
-            </p>
-            <div className="lg:text-3xl text-xl gap-4 flex justify-center py-2 pb-4 text-white font-bold animate__animated animate__fadeIn">
-              <a
-                href="https://assignment-10-90674.web.app/"
-                className="hover:text-indigo-300"
-              >
-                <CiLink />
-              </a>
-              <a
-                href="https://github.com/fakeistiak/CarHub-Client"
-                className="hover:text-blue-300"
-              >
-                <FaGithub />
-              </a>
-            </div>
-            <div className="flex gap-6 text-green-400 justify-center animate__animated animate__fadeIn">
-              <SiReact className="lg:text-3xl text-xl text-sky-400"></SiReact>
-              <DiMongodb className="lg:text-3xl text-xl"></DiMongodb>
-              <SiExpress className="lg:text-3xl text-xl text-green-400"></SiExpress>
-              <SiNextdotjs className="lg:text-3xl text-xl text-white"></SiNextdotjs>
-              <SiJavascript className="lg:text-3xl text-xl text-yellow-400"></SiJavascript>
+      <div className="grid lg:grid-cols-3 grid-cols-1 justify-center gap-8 lg:px-1 px-4 lg:pl-8">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="w-full max-w-lg hover:border-sky-500 transition border-4 overflow-hidden rounded-3xl shadow-lg bg-black mb-16 transform hover:scale-105 duration-1500 relative"
+            data-aos="fade-up"
+            onClick={() => openModal(project)}
+          >
+            <div className="relative overflow-hidden">
+              <img
+                className="object-cover w-full h-80 rounded-t-lg"
+                src={project.image}
+                alt={`${project.title} Preview`}
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center transition-opacity duration-300 cursor-pointer pb-4">
+                <div className="text-center bg-gray-800 bg-opacity-40 rounded-full py-2 px-6">
+                  <p className=" text-gray-200">{project.hoverText}</p>
+                  <p className="text-2xl font-bold text-white">
+                    {project.hoverText2}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div
-          className="w-full max-w-md overflow-hidden rounded-lg shadow-lg bg-gradient-to-r from-sky-500 to-teal-500 mb-12 transform hover:scale-105 transition-transform duration-300"
-          data-aos="fade-up"
-          data-aos-anchor="body"
-        >
-          <img
-            className="object-cover w-full h-56 rounded-t-lg"
-            src="https://i.ibb.co/mqx5Zj3/screencapture-assignment-9-7feb1-web-app-2023-12-12-12-112-33-1.png"
-            alt="IAB Planner Preview"
-          />
-          <div className="py-5 text-center text-white">
-            <h1 className="block lg:lg:text-3xl text-xl text-2xl font-bold mb-2 animate__animated animate__fadeInDown">
-              IAB Planner
-            </h1>
-            <p className="text-sm animate__animated animate__fadeIn px-4">
-              Elevate your special day with IAB Planner! Hire us to customize
-              and decorate your event according to your preferences. Let us turn
-              your vision into a beautifully adorned reality for a memorable
-              celebration.
-            </p>
-            <div className="lg:text-3xl text-xl gap-4 flex justify-center py-2 pb-4 text-white font-bold animate__animated animate__fadeIn">
-              <a
-                href="https://assignment-9-7feb1.web.app/"
-                className="hover:text-gray-300"
-              >
-                <CiLink />
-              </a>
-              <a
-                href="https://github.com/fakeistiak/IAB-Planner-Client"
-                className="hover:text-white"
-              >
-                <FaGithub />
-              </a>
-            </div>
-            <div className="flex gap-6 text-green-400 justify-center animate__animated animate__fadeIn">
-              <SiHtml5 className="lg:text-3xl text-xl"></SiHtml5>
-              <SiTailwindcss className="lg:text-3xl text-xl text-black"></SiTailwindcss>
-              <SiReact className="lg:text-3xl text-xl text-sky-400"></SiReact>
-              <SiJavascript className="lg:text-3xl text-xl text-yellow-400"></SiJavascript>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
+
+      {selectedProject && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-gray-800 to-black opacity-90"></div>
+          <div className="bg-black text-white w-5/6 lg:w-4/5 max-h-[90vh] overflow-y-auto rounded-xl relative z-10 p-8">
+            <button
+              className="absolute text-red-500 top-6 right-6 text-4xl font-bold"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+              <div className="lg:w-1/2">
+                <h3 className="text-xl lg:text-2xl text-center text-gray-400 mb-4">
+                  {selectedProject.hoverText}
+                </h3>
+                <h2 className="text-3xl lg:text-4xl font-bold text-center mb-6">
+                  {selectedProject.title}
+                </h2>
+                <p className="text-base lg:text-lg mb-6 leading-relaxed">
+                  {selectedProject.description}
+                </p>
+                <div className="lg:text-3xl text-xl gap-6 flex justify-center text-center pt-4 pb-8 text-white font-bold">
+                  {selectedProject.demoLink && (
+                    <a
+                      href={selectedProject.demoLink}
+                      className="hover:text-blue-300 flex gap-4 bg-slate-500 py-3 px-4 rounded-2xl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="text-xl lg:text-2xl">Live Site</span>{" "}
+                      <CiLink />
+                    </a>
+                  )}
+                  {selectedProject.githubLink && (
+                    <a
+                      href={selectedProject.githubLink}
+                      className="hover:text-blue-300 flex gap-4 bg-slate-500 py-3 px-4 rounded-2xl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <span className="lg:text-2xl text-xl">GitHub</span>{" "}
+                      <FaGithub />
+                    </a>
+                  )}
+                </div>
+                <div className="flex gap-6 text-green-400 justify-center mb-4">
+                  {selectedProject.technologies.map((tech, i) => {
+                    const TechIcon = tech.component;
+                    return (
+                      <TechIcon
+                        key={i}
+                        className={`lg:text-3xl text-xl ${tech.color}`}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="lg:w-1/2 flex justify-center items-center">
+                <img
+                  className="object-cover w-full rounded-lg"
+                  src={selectedProject.image}
+                  alt={`${selectedProject.title} Image`}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

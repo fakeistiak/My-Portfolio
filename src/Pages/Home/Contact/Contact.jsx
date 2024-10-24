@@ -31,18 +31,11 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Add validation logic here if needed
     if (!formData.fullName || !formData.email || !formData.message) {
       toast.error("Please fill in all fields.");
       return;
     }
-
-    // Add your form submission logic here
-
-    // Show success toast
     toast.success("Message sent successfully!");
-    // Clear form data
     setFormData({
       fullName: "",
       email: "",
@@ -51,10 +44,12 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen bg-black text-white pt-20">
-      <h1 className="text-5xl text-center font-bold font-serif text-white">
+    <section className="min-h-screen  text-white pt-20 mx-auto max-w-7xl">
+      <h1 className="lg:text-5xl text-3xl text-center font-bold font-serif text-white lg:pb-4 pb-2">
         Contact Me
       </h1>
+      <div className="mx-auto w-28 h-1 bg-cyan-500"></div>
+
       <div className="container px-6 py-10 mx-auto">
         <div className="lg:flex lg:items-center lg:-mx-6">
           <div className="lg:w-1/2 lg:mx-10">
@@ -67,41 +62,35 @@ const Contact = () => {
             <form className="mt-12" onSubmit={handleSubmit}>
               <div className="-mx-2 md:items-center md:flex">
                 <div className="flex-1 px-2">
-                  <label className="block mb-2 text-sm ">
-                    Full Name
-                  </label>
+                  <label className="block mb-2 text-sm ">Full Name</label>
                   <input
                     type="text"
                     name="fullName"
                     value={formData.fullName}
                     onChange={handleChange}
                     placeholder="Name here..."
-                    className="block w-full px-5 py-3 mt-2  placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                    className="block w-full px-5 py-3 mt-2  border border-gray-200 rounded-md placeholder-gray-300 bg-gray-600 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
                 <div className="flex-1 px-2 mt-4 md:mt-0">
-                  <label className="block mb-2 text-sm ">
-                    Email address
-                  </label>
+                  <label className="block mb-2 text-sm ">Email address</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Email address..."
-                    className="block w-full px-5 py-3 mt-2  placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                    className="block w-full px-5 py-3 mt-2   border border-gray-200 rounded-md placeholder-gray-300 bg-gray-600 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   />
                 </div>
               </div>
               <div className="w-full mt-4">
-                <label className="block mb-2 text-sm ">
-                  Message
-                </label>
+                <label className="block mb-2 text-sm ">Message</label>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="block w-full h-32 px-5 py-3 mt-2  placeholder-gray-400 bg-white border border-gray-200 rounded-md md:h-56 dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full h-32 px-5 py-3 mt-2   border border-gray-200 rounded-md md:h-56 placeholder-gray-300 bg-gray-600 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   placeholder="Message"
                 ></textarea>
               </div>
@@ -122,15 +111,11 @@ const Contact = () => {
             <div className="mt-6 space-y-8 md:mt-8">
               <p className="flex items-start -mx-2">
                 <FaLocationDot className="text-2xl text-white"></FaLocationDot>
-                <span className="mx-2  truncate w-72">
-                  Shahinbag, Dhaka
-                </span>
+                <span className="mx-2  truncate w-72">Uttara Sector-6, Dhaka</span>
               </p>
               <p className="flex items-start -mx-2">
                 <MdCall className="text-2xl text-white"></MdCall>
-                <span className="mx-2  truncate w-72">
-                  01628303627
-                </span>
+                <span className="mx-2  truncate w-72">01628303627</span>
               </p>
               <p className="flex items-start -mx-2">
                 <MdEmail className="text-2xl text-white"></MdEmail>
@@ -142,7 +127,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-      {/* Success Toast */}
       <ToastContainer
         position="top-right"
         autoClose={3000}

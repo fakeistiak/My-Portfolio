@@ -1,3 +1,4 @@
+// index.js
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
@@ -24,9 +25,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div className='bg-gradient-to-r from-white to-black-50'>
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+  <div className='bg-image'>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   </div>
 );
