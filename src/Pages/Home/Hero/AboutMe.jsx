@@ -15,7 +15,7 @@ const AboutMe = () => {
       onEnter={() => setCounterStart(true)}
       onExit={() => setCounterStart(false)}
     >
-      <div className="min-h-screen  text-white px-6 lg:px-24 pt-40">
+      <div className="min-h-screen  text-white px-6 lg:px-16 pt-40">
         <div
           className="max-w-screen-lg mx-auto flex flex-col items-center text-center lg:text-left"
           data-aos="fade-up"
