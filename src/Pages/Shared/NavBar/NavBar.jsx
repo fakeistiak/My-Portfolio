@@ -22,7 +22,7 @@ const Navbar = () => {
   const navLinks = (
     <>
       <li className="text-2xl font-semibold px-2 py-1 text-white hover:text-cyan-500">
-        <a href="" onClick={handleRouteClick}>
+        <a href="https://www.linkedin.com/in/istiak-ahmed-7130302a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" onClick={handleRouteClick}>
           <FaLinkedin />
         </a>
       </li>
@@ -32,7 +32,7 @@ const Navbar = () => {
         </a>
       </li>
       <li className="text-2xl font-semibold px-2 py-1 text-white hover:text-cyan-500">
-        <a href="" onClick={handleRouteClick}>
+        <a href="https://www.facebook.com/share/14kwF5d7KC/?mibextid=wwXIfr" onClick={handleRouteClick}>
           <FaFacebook />
         </a>
       </li>
