@@ -1,9 +1,7 @@
-import { useEffect } from "react"
-import AOS from "aos"
-import "aos/dist/aos.css"
-import { SiExpress, SiTailwindcss } from "react-icons/si"
-import Experience from "../Experience/Experience"
-import Skill from "./Skill"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { SiExpress, SiTailwindcss } from "react-icons/si";
+import Skill from "./Skill";
 
 const skills = [
   {
@@ -48,36 +46,46 @@ const skills = [
       },
     ],
   },
-]
+];
 
-const Skills=()=> {
-  useEffect(() => {
-    AOS.init({
-      duration: 1500,
-    })
-  }, [])
+const Skills = () => {
+  const [loaded, setLoaded] = useState(false);
 
   return (
-    <section className="py-16 sm:py-24">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-white mb-12">My Skills</h2>
-        <div className="grid gap-12 md:gap-16">
-          {skills.map((category, index) => (
-            <div key={index}>
-              <h3 className="text-2xl sm:text-3xl font-semibold text-center text-white mb-6">{category.category}</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
-                {category.items.map((skill, i) => (
-                  <Skill key={i} skill={skill} />
-                ))}
-              </div>
+    <motion.div
+      className="container mx-auto px-4 pb-20"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      onAnimationComplete={() => setLoaded(true)}
+    >
+      <h4 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-white mb-6">
+        My Skills
+      </h4>
+      <div className="mx-auto w-20 lg:w-20 h-1 bg-cyan-500 mb-6 lg:mb-12"></div>
+      <div className="grid gap-12 md:gap-16">
+        {skills.map((category, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 50 }}
+            animate={loaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 1, delay: 0.2 * index }}
+          >
+            <h3 className="text-2xl sm:text-3xl font-semibold text-center text-white mb-6">
+              {category.category}
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-7xl mx-auto px-6">
+              {category.items.map((skill, i) => (
+                <motion.div key={i} layoutId={`skill-${skill.name}`}>
+                  <Skill skill={skill} />
+                </motion.div>
+              ))}
             </div>
-          ))}
-        </div>
+          </motion.div>
+        ))}
       </div>
-      <Experience />
-    </section>
-  )
-}
+    </motion.div>
+  );
+};
 
-export default Skills
-
+export default Skills;

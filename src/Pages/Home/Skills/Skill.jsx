@@ -1,7 +1,7 @@
 const Skill=({ skill })=> {
     return (
       <div
-        className="rounded-lg p-6 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/20 hover:-translate-y-1"
+        className="rounded-lg p-6 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg hover:bg-teal-800 hover:-translate-y-1"
         data-aos="fade-up"
       >
         <div className="w-16 h-16 sm:w-20 sm:h-20 mb-4">

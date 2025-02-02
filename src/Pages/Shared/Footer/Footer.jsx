@@ -1,9 +1,8 @@
-import { FaSlackHash } from "react-icons/fa";
+
 const Footer = () => {
   return (
-    <footer className="footer footer-center p-10 text-white mx-auto max-w-7xl">
+    <footer className="footer footer-center max-w-7xl px-6 mx-auto text-white pt-12 pb-4">
       <aside>
-        <FaSlackHash className="text-7xl"></FaSlackHash>
         <p className="font-bold">
           Istiuqe Ahmed Bhuiyan Portfolio
           <br />

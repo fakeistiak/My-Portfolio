@@ -1,32 +1,34 @@
-import { useState, useEffect } from "react"
-import { FaGithub } from "react-icons/fa"
-import { CiLink } from "react-icons/ci"
-import AOS from "aos"
-import "aos/dist/aos.css"
-import projects from "../../../components/projects.js"
+import { useState, useEffect } from "react";
+import { FaGithub } from "react-icons/fa";
+import { CiLink } from "react-icons/ci";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import projects from "../../../components/projects.js";
 
 const MyProjects = () => {
-  const [selectedProject, setSelectedProject] = useState(null)
+  const [selectedProject, setSelectedProject] = useState(null);
 
   useEffect(() => {
     AOS.init({
       duration: 200,
       easing: "ease-in-out",
       once: true,
-    })
-  }, [])
+    });
+  }, []);
 
   const openModal = (project) => {
-    setSelectedProject(project)
-  }
+    setSelectedProject(project);
+  };
 
   const closeModal = () => {
-    setSelectedProject(null)
-  }
+    setSelectedProject(null);
+  };
 
   return (
     <div className="text-white mx-auto max-w-7xl">
-      <h1 className="text-2xl lg:text-4xl font-bold font-serif text-center pt-4 lg:pt-6 pb-2 lg:pb-4">Projects</h1>
+      <h1 className="text-2xl lg:text-4xl font-bold font-serif text-center pt-4 lg:pt-6 pb-2 lg:pb-4">
+        Projects
+      </h1>
       <div className="mx-auto w-12 lg:w-20 h-1 bg-cyan-500 mb-6 lg:mb-12"></div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-8 px-4 lg:px-8">
@@ -43,10 +45,14 @@ const MyProjects = () => {
                 src={project.image || "/placeholder.svg"}
                 alt={`${project.title} Preview`}
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center transition-opacity duration-300 cursor-pointer pb-2 lg:pb-4">
+              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-end justify-center transition-opacity duration-300  pb-2 lg:pb-4">
                 <div className="text-center bg-gray-800 bg-opacity-70 rounded-full py-1 lg:py-2 px-3 lg:px-6">
-                  <p className="text-lg sm:text-xl lg:text-3xl font-bold text-cyan-500">{project.hoverText}</p>
-                  <p className="text-base sm:text-lg lg:text-2xl font-bold text-white">{project.hoverText2}</p>
+                  <p className="text-lg sm:text-xl lg:text-3xl font-bold text-cyan-500">
+                    {project.hoverText}
+                  </p>
+                  <p className="text-base sm:text-lg lg:text-2xl font-bold text-white">
+                    {project.hoverText2}
+                  </p>
                 </div>
               </div>
             </div>
@@ -69,8 +75,12 @@ const MyProjects = () => {
                 <h3 className="text-lg lg:text-2xl text-center text-gray-400 mb-2 lg:mb-4">
                   {selectedProject.hoverText}
                 </h3>
-                <h2 className="text-2xl lg:text-4xl font-bold text-center mb-3 lg:mb-6">{selectedProject.title}</h2>
-                <p className="text-sm lg:text-lg mb-4 lg:mb-6 leading-relaxed">{selectedProject.description}</p>
+                <h2 className="text-2xl lg:text-4xl font-bold text-center mb-3 lg:mb-6">
+                  {selectedProject.title}
+                </h2>
+                <p className="text-sm lg:text-lg mb-4 lg:mb-6 leading-relaxed">
+                  {selectedProject.description}
+                </p>
                 <div className="text-lg lg:text-3xl gap-3 lg:gap-6 flex justify-center text-center pt-2 lg:pt-4 pb-4 lg:pb-8 text-white font-bold">
                   {selectedProject.demoLink && (
                     <a
@@ -79,7 +89,8 @@ const MyProjects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className="text-base lg:text-2xl">Live Site</span> <CiLink />
+                      <span className="text-base lg:text-2xl">Live Site</span>{" "}
+                      <CiLink />
                     </a>
                   )}
                   {selectedProject.githubLink && (
@@ -89,14 +100,20 @@ const MyProjects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className="text-base lg:text-2xl">GitHub</span> <FaGithub />
+                      <span className="text-base lg:text-2xl">GitHub</span>{" "}
+                      <FaGithub />
                     </a>
                   )}
                 </div>
                 <div className="flex gap-3 lg:gap-6 text-green-400 justify-center mb-4">
                   {selectedProject.technologies.map((tech, i) => {
-                    const TechIcon = tech.component
-                    return <TechIcon key={i} className={`text-xl lg:text-3xl ${tech.color}`} />
+                    const TechIcon = tech.component;
+                    return (
+                      <TechIcon
+                        key={i}
+                        className={`text-xl lg:text-3xl ${tech.color}`}
+                      />
+                    );
                   })}
                 </div>
               </div>
@@ -112,8 +129,7 @@ const MyProjects = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default MyProjects
-
+export default MyProjects;

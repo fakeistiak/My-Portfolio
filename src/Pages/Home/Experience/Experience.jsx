@@ -13,9 +13,9 @@ const Experience = () => {
         onEnter={() => setCounterStart(true)}
         onExit={() => setCounterStart(false)}
       >
-        <div className="flex text-white flex-col lg:flex-row justify-center items-center text-center px-4 lg:px-20 max-w-5xl mx-auto pt-16 gap-8 ">
+        <div className="flex text-white flex-col lg:flex-row justify-center items-center text-center px-4 lg:px-20 max-w-7xl mx-auto pt-16 gap-8">
           <div className="mb-8 lg:mb-0">
-            <div className="shadow-2xl rounded-xl h-[200px] lg:w-[200px] flex flex-col justify-center items-center pb-8 gap-4">
+            <div className="rounded-xl h-[200px] lg:w-[200px] flex flex-col justify-center items-center pb-8 gap-4">
               <GoProject className="text-4xl mt-2 text-white-500"></GoProject>
               <h1 className="text-4xl font-bold text-white-500">
                 {counterStart && (
@@ -29,7 +29,7 @@ const Experience = () => {
             </div>
           </div>
           <div className="mb-8 lg:mb-0">
-            <div className="shadow-2xl rounded-xl h-[200px] lg:w-[200px] flex flex-col justify-center items-center pb-8 gap-4">
+            <div className="rounded-xl h-[200px] lg:w-[200px] flex flex-col justify-center items-center pb-8 gap-4">
               <FaUserCheck className="text-4xl mt-2 text-white-500"></FaUserCheck>
               <h1 className="text-4xl font-bold text-white-500">
                 {counterStart && <CountUp delay={0.2} end={1} duration={2.0} />}
