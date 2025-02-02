@@ -77,7 +77,7 @@ const Contact = () => {
                     value={formData.fullName}
                     onChange={handleChange}
                     placeholder="Name here..."
-                    className="block w-full px-5 py-3 mt-2 border border-gray-200 rounded-md placeholder-gray-300 bg-gray-600 focus:border-blue-400 focus:ring focus:ring-opacity-40"
+                    className="block w-full px-5 py-3 mt-2 border border-gray-200 rounded-md placeholder-gray-300 bg-black focus:border-blue-400 focus:ring focus:ring-opacity-40"
                   />
                 </div>
                 <div className="flex-1 px-2 mt-4 md:mt-0">
@@ -88,7 +88,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Email address..."
-                    className="block w-full px-5 py-3 mt-2 border border-gray-200 rounded-md placeholder-gray-300 bg-gray-600 focus:border-blue-400 focus:ring focus:ring-opacity-40"
+                    className="block w-full px-5 py-3 mt-2 border border-gray-200 rounded-md placeholder-gray-300 bg-black focus:border-blue-400 focus:ring focus:ring-opacity-40"
                   />
                 </div>
               </div>
@@ -98,7 +98,7 @@ const Contact = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  className="block w-full h-32 px-5 py-3 mt-2 border border-gray-200 rounded-md placeholder-gray-300 bg-gray-600 focus:border-blue-400 focus:ring focus:ring-opacity-40"
+                  className="block w-full h-32 px-5 py-3 mt-2 border border-gray-200 rounded-md placeholder-gray-300 bg-black focus:border-blue-400 focus:ring focus:ring-opacity-40"
                   placeholder="Message"
                 ></textarea>
               </div>
