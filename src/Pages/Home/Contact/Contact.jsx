@@ -34,7 +34,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="min-h-screen text-white pt-20 mx-auto max-w-7xl">
+    <section className="min-h-screen text-white  pt-20 mx-auto max-w-7xl">
 <div className="grid place-content-center px-4 py-4 text-yellow-50">
   <h1 className="max-w-2xl text-center text-5xl leading-snug">
 
@@ -112,8 +112,8 @@ const Contact = () => {
           </div>
           <div className="mt-12 lg:flex lg:mt-0 lg:flex-col lg:items-center lg:w-1/2 lg:mx-10">
             <img
-              className="hidden object-cover mx-auto rounded-full lg:block w-96 h-96"
-              src="https://i.ibb.co/C1PydKw/400731331-343062448342896-2665823676800078365-n.jpg"
+              className="hidden shadow-2xl shadow-cyan-500 object-cover mx-auto rounded-full lg:block w-96 h-96"
+              src="https://i.ibb.co.com/RTQVR5YK/image1.jpg"
               alt="Profile"
             />
             <div className="mt-6 space-y-8 md:mt-8">
