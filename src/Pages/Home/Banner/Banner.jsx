@@ -41,12 +41,12 @@ const Banner = () => {
             worker who takes ownership of everything I do, always striving to help my company succeed.
           </p>
           <button
-            className=" sm:w-auto w-auto text-sm p-3 bg-sky-400 font-bold text-black rounded-xl flex items-center justify-center hover:bg-sky-600 transition duration-300 ease-in-out"
+            className=" sm:w-auto w-auto text-sm p-3 bg-sky-400 font-semibold text-white rounded-xl flex items-center justify-center hover:bg-sky-600 transition duration-300 ease-in-out"
             data-aos="fade-up"
             data-aos-delay="600"
             onClick={handleDownloadResume}
           >
-            Download Resume <MdDownload className="text-xl ml-2" />
+            Download Resume <MdDownload className="text-xl ml-0.5" />
           </button>
         </div>
         <div className="w-full lg:w-1/2 flex items-center justify-center" data-aos="fade-left" data-aos-delay="200">

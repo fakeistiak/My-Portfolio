@@ -37,7 +37,7 @@ const AboutMe = () => {
           </p>
             <Link
               to="/contact"
-              className="mt-6 px-4 py-2 bg-sky-400 text-black font-semibold rounded-xl hover:bg-sky-600 transition duration-300 ease-in-out w-fit block"
+              className="mt-6 px-4 py-2 bg-sky-400 text-white font-semibold rounded-xl hover:bg-sky-600 transition duration-300 ease-in-out w-fit block"
             >
               Hire Me
             </Link>
