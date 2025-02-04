@@ -23,7 +23,7 @@ const Banner = () => {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6">
             I'm a <TypeAnimation sequence={["Front-End Developer", 2500]} speed={1} repeat={0} className="text-sky-400" />
           </h2>
-          <p className="mb-6 text-sm sm:text-base lg:text-lg font-light">
+          <p className="font-poppins mb-6 text-sm sm:text-base lg:text-lg font-light">
             My thirst for knowledge is endless, leading me on an exciting journey of continuous growth. I'm a hard worker who takes ownership of everything I do, always striving to help my company succeed.
           </p>
           <motion.button

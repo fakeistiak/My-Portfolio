@@ -27,7 +27,7 @@ const AboutMe = () => {
               Computer Science & Engineering Student
             </span>
           </h2>
-          <p className="mt-6 text-base sm:text-lg lg:text-xl font-light  lg:leading-loose leading-loose">
+          <p className="mt-6 text-base sm:text-lg lg:text-xl font-light  lg:leading-loose leading-loose font-poppins">
             at Northern University Bangladesh. Alongside my studies, I have
             developed a strong foundation in basic Data Structures and
             Algorithms and have successfully solved a range of problems using C
